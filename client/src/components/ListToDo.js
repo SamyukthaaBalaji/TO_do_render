@@ -5,7 +5,7 @@ function ListToDo() {
   const [todos, settodos] = useState([]);
   const getTodos = async () => {
     try {
-      const response = await fetch("http://localhost:5000/alltodo");
+      const response = await fetch("https://to-do-render.onrender.com/alltodo");
       const jsondata = await response.json();
       /*  console.log(response); */
       /*  console.log(jsondata); */
@@ -17,7 +17,7 @@ function ListToDo() {
   };
   const deletetodo = async (id) => {
     try {
-      const deletetodo = await fetch(`http://localhost:5000/todos/${id}`, {
+      const deletetodo = await fetch(`https://to-do-render.onrender.com/todos/${id}`, {
         method: "DELETE",
       });
       settodos(todos.filter((todo) => todo.todo_id !== id));
